@@ -13,7 +13,9 @@ TRANSLATED_TEXT = "translatedText"
 def translate(fromLanguage, toLanguage, text):
 	""" Translate text using google translate service"""
 	# Generate url
-	url = GOOGLE_TRANSLATE_AJAX_URL + urllib.urlencode({"v" : "1.0", "langpair" : fromLanguage + LANGUAGE_SEPARATOR + toLanguage, "q" : text})
+	url = GOOGLE_TRANSLATE_AJAX_URL + urllib.urlencode({"v" : "1.0", \
+			"langpair" : fromLanguage + LANGUAGE_SEPARATOR + toLanguage, \
+			"q" : text})
 
 	result = simplejson.load(urllib.urlopen(url))
 	
